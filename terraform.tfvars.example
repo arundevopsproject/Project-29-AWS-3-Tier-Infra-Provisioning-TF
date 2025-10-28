@@ -1,0 +1,62 @@
+# Example Terraform variables file
+# Copy this file to terraform.tfvars and update the values
+
+# AWS Configuration
+aws_region = "ap-south-1"
+project_name = "three-tier-app"
+environment = "production"
+
+# VPC Configuration
+vpc_cidr = "10.0.0.0/16"
+
+# Database Configuration
+db_instance_class = "db.t3.medium"
+db_allocated_storage = 100
+db_engine_version = "8.0.35"
+db_name = "appdb"
+db_username = "admin"
+db_password = "your-secure-password-here"
+
+# EC2 Instance Configuration
+instance_type = "t3.medium"
+ec2_instance_count = 0  # Set to 0 to disable standalone EC2 instances
+
+# Auto Scaling Group Configuration
+min_size = 2
+max_size = 10
+desired_capacity = 3
+
+# SNS Configuration
+alert_email_addresses = ["admin@yourcompany.com"]
+alert_sms_numbers = ["+1234567890"]
+notification_email_addresses = ["notifications@yourcompany.com"]
+
+# ElastiCache Configuration
+redis_node_type = "cache.t3.micro"
+redis_num_nodes = 2
+redis_auth_token = "your-redis-auth-token"
+
+# WAF Configuration
+waf_rate_limit = 2000
+waf_blocked_countries = []  # e.g., ["CN", "RU"] to block specific countries
+waf_allowed_ips = []        # e.g., ["1.2.3.4/32"] to whitelist specific IPs
+
+# VPC Flow Logs Configuration
+flow_logs_retention_days = 30
+enable_cloudwatch_flow_logs = false
+
+# Application Secrets
+jwt_secret = "your-jwt-secret-key"
+api_key = "your-api-key"
+encryption_key = "your-encryption-key"
+
+# Security Configuration
+bastion_allowed_cidrs = ["1.2.3.4/32"]  # Replace with your actual IP address
+
+# Additional Tags
+tags = {
+  Owner = "DevOps Team"
+  CostCenter = "Engineering"
+  Backup = "Daily"
+}
+

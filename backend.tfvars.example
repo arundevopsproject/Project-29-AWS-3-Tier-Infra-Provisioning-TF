@@ -1,0 +1,7 @@
+# Example backend configuration file
+# Copy this file to backend.tfvars and update the values
+
+bucket  = "your-terraform-state-bucket-name"
+key     = "three-tier-infrastructure/terraform.tfstate"
+region  = "ap-south-1"
+encrypt = true
